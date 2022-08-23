@@ -360,7 +360,7 @@ export default (props: ViewerProps) => {
     if (images.length > 0 && realActiveIndex >= 0) {
       activeImg2 = images[realActiveIndex];
     }
-    activeImg2.rotate = state.rotate2 ? state.rotate2 :  activeImg2.rotate;
+    activeImg2.rotate = state.rotate2 ? state.rotate2 :  0;
     return activeImg2;
   }
 
