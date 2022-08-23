@@ -278,7 +278,7 @@ export default (props: ViewerProps) => {
         scaleX = state.scaleX;
         scaleY = state.scaleY;
       }
-      let rotate2 = (Math.abs(activeImage.rotate ? activeImage.rotate : 0 ) ) % 360;
+
       dispatch(createAction(ACTION_TYPES.update, {
         width: width,
         height: height,
@@ -287,8 +287,7 @@ export default (props: ViewerProps) => {
         imageWidth: imgWidth,
         imageHeight: imgHeight,
         loading: false,
-        rotate: rotate2 ?? 0,
-        rotate2: rotate2 ?? 0,
+        rotate: activeImage.rotate ?? 0,
         scaleX: scaleX,
         scaleY: scaleY,
         loadFailed: !success,
@@ -348,6 +347,7 @@ export default (props: ViewerProps) => {
     let activeImg2: ImageDecorator = {
       src: '',
       alt: '',
+      rotate: 0,
       downloadUrl: '',
     };
 
@@ -360,7 +360,7 @@ export default (props: ViewerProps) => {
     if (images.length > 0 && realActiveIndex >= 0) {
       activeImg2 = images[realActiveIndex];
     }
-    activeImg2.rotate = activeImg2.rotate ? activeImg2.rotate : state.rotate2;
+    activeImg2.rotate = state.rotate2 ? state.rotate2 :  activeImg2.rotate;
     return activeImg2;
   }
 
@@ -390,6 +390,8 @@ export default (props: ViewerProps) => {
   function handleRotate(isRight: boolean = false) {
     let rotate = state.rotate + 90 * (isRight ? 1 : -1);
     let rotate2 = (Math.abs(rotate) ) % 360;
+    let activeImage = getActiveImage();
+    activeImage.rotate = rotate2;
     dispatch(createAction(ACTION_TYPES.update, {
       rotate: rotate,
       rotate2: rotate2,
