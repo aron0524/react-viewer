@@ -1,6 +1,6 @@
 {
   "name": "@aron0524/react-viewer",
-  "version": "3.2.7",
+  "version": "3.2.8",
   "description": "react image viewer",
   "main": "dist/index",
   "scripts": {
