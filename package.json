@@ -1,5 +1,5 @@
 {
-  "name": "react-viewer2",
+  "name": "@aron0524/react-viewer",
   "version": "3.2.3",
   "description": "react image viewer",
   "main": "dist/index",
@@ -10,7 +10,7 @@
     "build": "webpack --config webpack.config.prop.js && gulp",
     "build:analyze": "ANALYZE=true webpack --config webpack.config.prop.js",
     "doc": "webpack --config webpack.config.doc.js",
-    "pub": "npm run build && npm publish --access publish",
+    "pub": "npm run build && npm publish",
     "prepublish": "npm run build",
     "predeploy": "npm run doc",
     "deploy": "gh-pages -d pages-build"
@@ -94,6 +94,9 @@
   "pre-commit": [
     "lint"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "jest": {
     "transform": {
       "^.+\\.tsx?$": "ts-jest",
