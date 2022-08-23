@@ -278,7 +278,7 @@ export default (props: ViewerProps) => {
         scaleX = state.scaleX;
         scaleY = state.scaleY;
       }
-      let rotate2 = (Math.abs(state.rotate2 ? state.rotate2 : activeImage.rotate) ) % 360;
+      let rotate2 = (Math.abs(activeImage.rotate ? activeImage.rotate : 0 ) ) % 360;
       dispatch(createAction(ACTION_TYPES.update, {
         width: width,
         height: height,
@@ -287,7 +287,7 @@ export default (props: ViewerProps) => {
         imageWidth: imgWidth,
         imageHeight: imgHeight,
         loading: false,
-        rotate: state.rotate2 ? state.rotate2 : rotate2,
+        rotate: activeImage.rotate,
         rotate2: rotate2,
         scaleX: scaleX,
         scaleY: scaleY,
