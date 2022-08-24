@@ -287,7 +287,7 @@ export default (props: ViewerProps) => {
         imageWidth: imgWidth,
         imageHeight: imgHeight,
         loading: false,
-        rotate: activeImage.rotate ?? 0,
+        rotate: 0,
         scaleX: scaleX,
         scaleY: scaleY,
         loadFailed: !success,
