@@ -119,6 +119,8 @@ interface ViewerProps {
 
   // min scale
   minScale?: number;
+  // rotate
+  rotate?: number;
 }
 
 export default ViewerProps;

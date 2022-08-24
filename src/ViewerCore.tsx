@@ -7,7 +7,7 @@ import ViewerProps, { ImageDecorator, ToolbarConfig } from './ViewerProps';
 import Icon, { ActionType } from './Icon';
 import * as constants from './constants';
 import classnames from 'classnames';
-
+import  qs from 'qs';
 function noop() { }
 
 // const transitionDuration = 300;
@@ -85,7 +85,7 @@ export default (props: ViewerProps) => {
     height: 0,
     top: 15,
     left: null,
-    rotate: 0,
+    rotate: props.rotate,
     rotate2: 0,
     imageWidth: 0,
     imageHeight: 0,
@@ -134,7 +134,7 @@ export default (props: ViewerProps) => {
           height: 0,
           scaleX: defaultScale,
           scaleY: defaultScale,
-          rotate: 1,
+          rotate: props.rotate,
           imageWidth: 0,
           imageHeight: 0,
           loadFailed: false,
@@ -278,7 +278,18 @@ export default (props: ViewerProps) => {
         scaleX = state.scaleX;
         scaleY = state.scaleY;
       }
-
+      const query = qs.parse(activeImage.src.split('?')[1]);
+      const process = query['x-oss-process'] ? query['x-oss-process'] : '';
+      // console.log('loadImg',process.indexOf('rotate'));
+      // console.log('loadImg activeImage.src',qs.parse(activeImage.src.split('?')[0]));
+      if (process && process.indexOf('rotate') !== -1) {
+        img.src = qs.parse(activeImage.src.split('?'))[0];
+        activeImage.src = qs.parse(activeImage.src.split('?'))[0];
+        activeImage.rotate = props.rotate;
+        // console.log('loadImgSuccess props.rotate',props.rotate);
+        // console.log('loadImgSuccess state.rotate',state.rotate);
+        // console.log('loadImgSuccess state.rotate2',state.rotate2);
+      }
       dispatch(createAction(ACTION_TYPES.update, {
         width: width,
         height: height,
@@ -287,7 +298,7 @@ export default (props: ViewerProps) => {
         imageWidth: imgWidth,
         imageHeight: imgHeight,
         loading: false,
-        rotate: 0,
+        rotate: props.rotate,
         scaleX: scaleX,
         scaleY: scaleY,
         loadFailed: !success,
@@ -347,7 +358,6 @@ export default (props: ViewerProps) => {
     let activeImg2: ImageDecorator = {
       src: '',
       alt: '',
-      rotate: 0,
       downloadUrl: '',
     };
 
@@ -390,8 +400,6 @@ export default (props: ViewerProps) => {
   function handleRotate(isRight: boolean = false) {
     let rotate = state.rotate + 90 * (isRight ? 1 : -1);
     let rotate2 = (Math.abs(rotate) ) % 360;
-    let activeImage = getActiveImage();
-    activeImage.rotate = rotate2;
     dispatch(createAction(ACTION_TYPES.update, {
       rotate: rotate,
       rotate2: rotate2,

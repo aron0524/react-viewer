@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import Viewer from '../src/Viewer';
-const img2 = require('./images/landscape2.jpg');
-const img = require('./images/landscape.jpg');
-const img3 = require('./images/tibet-6.jpg');
-const img4 = require('./images/image4.jpg');
+// const img2 = require('./images/landscape2.jpg');
+// const img = require('./images/landscape.jpg');
+// const img3 = require('./images/tibet-6.jpg');
+// const img4 = require('./images/image4.jpg');
 import './index.less';
 import classNames from 'classnames';
 import { Button, List, Checkbox } from 'antd';
@@ -136,27 +136,188 @@ class App extends React.Component<any, Partial<State>> {
   }
 
   render() {
-    let images = [{
-      src: img,
-      alt: 'lake',
-      downloadUrl: '',
-      rotate: 90,
-    }, {
-      src: img2,
-      alt: 'mountain',
-      downloadUrl: '',
-      rotate: 180,
-    }, {
-      src: img3,
-      alt: '',
-      downloadUrl: '',
-      rotate: 270,
-    }, {
-      src: img4,
-      alt: '',
-      downloadUrl: '',
-      rotate: 0,
-    }];
+    let images =  [
+      {
+        'id': 10624,
+        'file_url': 'img/20220801/134147/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'file_type': 'img',
+        'remark': '',
+        'is_oss': 1,
+        'rotate': 270,
+        'creator': '户明伟',
+        'modifier': '户明伟',
+        'create_time': '2022-08-01 13:41:50',
+        'update_time': '2022-08-01 13:41:50',
+        'delete_time': 0,
+        'value': 10624,
+        'name': 'img/20220801/134147/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'origin': 'img/20220801/134147/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'thumb': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220801/134147/8c7dd922ad47494fc02c388e12c00eac.jpeg?x-oss-process=image/resize,h_150,w_150',
+        'src': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220801/134147/8c7dd922ad47494fc02c388e12c00eac.jpeg?x-oss-process=image/rotate,270',
+        'label': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220801/134147/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'img_hide_flag': 0,
+      },
+      {
+        'id': 10625,
+        'file_url': 'img/20220801/134156/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'file_type': 'img',
+        'remark': '',
+        'is_oss': 1,
+        'rotate': 180,
+        'creator': '户明伟',
+        'modifier': '户明伟',
+        'create_time': '2022-08-01 13:41:59',
+        'update_time': '2022-08-01 13:41:59',
+        'delete_time': 0,
+        'value': 10625,
+        'name': 'img/20220801/134156/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'origin': 'img/20220801/134156/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'thumb': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220801/134156/8c7dd922ad47494fc02c388e12c00eac.jpeg?x-oss-process=image/resize,h_150,w_150',
+        'src': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220801/134156/8c7dd922ad47494fc02c388e12c00eac.jpeg?x-oss-process=image/rotate,180',
+        'label': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220801/134156/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'img_hide_flag': 0,
+      },
+      {
+        'id': 10626,
+        'file_url': 'img/20220801/134208/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'file_type': 'img',
+        'remark': '',
+        'is_oss': 1,
+        'rotate': 270,
+        'creator': '户明伟',
+        'modifier': '户明伟',
+        'create_time': '2022-08-01 13:42:10',
+        'update_time': '2022-08-01 13:42:10',
+        'delete_time': 0,
+        'value': 10626,
+        'name': 'img/20220801/134208/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'origin': 'img/20220801/134208/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'thumb': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220801/134208/8c7dd922ad47494fc02c388e12c00eac.jpeg?x-oss-process=image/resize,h_150,w_150',
+        'src': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220801/134208/8c7dd922ad47494fc02c388e12c00eac.jpeg?x-oss-process=image/rotate,270',
+        'label': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220801/134208/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'img_hide_flag': 0,
+      },
+      {
+        'id': 10627,
+        'file_url': 'img/20220801/134216/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'file_type': 'img',
+        'remark': '',
+        'is_oss': 1,
+        'rotate': 180,
+        'creator': '户明伟',
+        'modifier': '户明伟',
+        'create_time': '2022-08-01 13:42:18',
+        'update_time': '2022-08-01 13:42:18',
+        'delete_time': 0,
+        'value': 10627,
+        'name': 'img/20220801/134216/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'origin': 'img/20220801/134216/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'thumb': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220801/134216/8c7dd922ad47494fc02c388e12c00eac.jpeg?x-oss-process=image/resize,h_150,w_150',
+        'src': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220801/134216/8c7dd922ad47494fc02c388e12c00eac.jpeg?x-oss-process=image/rotate,180',
+        'label': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220801/134216/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'img_hide_flag': 0,
+      },
+      {
+        'id': 11168,
+        'file_url': 'img/20220805/122946/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'file_type': 'img',
+        'remark': '',
+        'is_oss': 1,
+        'rotate': 0,
+        'creator': '户明伟',
+        'modifier': '户明伟',
+        'create_time': '2022-08-05 12:29:47',
+        'update_time': '2022-08-05 12:29:47',
+        'delete_time': 0,
+        'value': 11168,
+        'name': 'img/20220805/122946/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'origin': 'img/20220805/122946/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'thumb': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220805/122946/8c7dd922ad47494fc02c388e12c00eac.jpeg?x-oss-process=image/resize,h_150,w_150',
+        'src': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220805/122946/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'label': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220805/122946/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'img_hide_flag': 0,
+      },
+      {
+        'id': 11169,
+        'file_url': 'img/20220805/122954/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'file_type': 'img',
+        'remark': '',
+        'is_oss': 1,
+        'rotate': 0,
+        'creator': '户明伟',
+        'modifier': '户明伟',
+        'create_time': '2022-08-05 12:29:54',
+        'update_time': '2022-08-05 12:29:54',
+        'delete_time': 0,
+        'value': 11169,
+        'name': 'img/20220805/122954/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'origin': 'img/20220805/122954/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'thumb': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220805/122954/8c7dd922ad47494fc02c388e12c00eac.jpeg?x-oss-process=image/resize,h_150,w_150',
+        'src': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220805/122954/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'label': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220805/122954/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'img_hide_flag': 0,
+      },
+      {
+        'id': 11170,
+        'file_url': 'img/20220805/123000/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'file_type': 'img',
+        'remark': '',
+        'is_oss': 1,
+        'rotate': 0,
+        'creator': '户明伟',
+        'modifier': '户明伟',
+        'create_time': '2022-08-05 12:30:01',
+        'update_time': '2022-08-05 12:30:01',
+        'delete_time': 0,
+        'value': 11170,
+        'name': 'img/20220805/123000/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'origin': 'img/20220805/123000/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'thumb': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220805/123000/8c7dd922ad47494fc02c388e12c00eac.jpeg?x-oss-process=image/resize,h_150,w_150',
+        'src': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220805/123000/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'label': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220805/123000/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'img_hide_flag': 0,
+      },
+      {
+        'id': 11171,
+        'file_url': 'img/20220805/123007/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'file_type': 'img',
+        'remark': '',
+        'is_oss': 1,
+        'rotate': 0,
+        'creator': '户明伟',
+        'modifier': '户明伟',
+        'create_time': '2022-08-05 12:30:08',
+        'update_time': '2022-08-05 12:30:08',
+        'delete_time': 0,
+        'value': 11171,
+        'name': 'img/20220805/123007/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'origin': 'img/20220805/123007/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'thumb': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220805/123007/8c7dd922ad47494fc02c388e12c00eac.jpeg?x-oss-process=image/resize,h_150,w_150',
+        'src': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220805/123007/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'label': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220805/123007/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'img_hide_flag': 0,
+      },
+      {
+        'id': 11172,
+        'file_url': 'img/20220805/123026/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'file_type': 'img',
+        'remark': '',
+        'is_oss': 1,
+        'rotate': 0,
+        'creator': '户明伟',
+        'modifier': '户明伟',
+        'create_time': '2022-08-05 12:30:27',
+        'update_time': '2022-08-05 12:30:27',
+        'delete_time': 0,
+        'value': 11172,
+        'name': 'img/20220805/123026/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'origin': 'img/20220805/123026/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'thumb': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220805/123026/8c7dd922ad47494fc02c388e12c00eac.jpeg?x-oss-process=image/resize,h_150,w_150',
+        'src': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220805/123026/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'label': 'http://pn-oa-3.oss-cn-hangzhou.aliyuncs.com:80/img/20220805/123026/8c7dd922ad47494fc02c388e12c00eac.jpeg',
+        'img_hide_flag': 0,
+      },
+    ];
 
     let inline = this.state.mode === 'inline';
 
@@ -255,7 +416,6 @@ class App extends React.Component<any, Partial<State>> {
                         this.setState({
                           visible: true,
                           activeIndex: index,
-                          rotate: item.rotate,
                         });
                       }}/>
                     </div>
@@ -267,6 +427,7 @@ class App extends React.Component<any, Partial<State>> {
           </div>
           <Viewer
           visible={this.state.visible}
+          scalable={true}
           onClose={() => {
             this.setState({ visible: false });
           }}
@@ -274,6 +435,7 @@ class App extends React.Component<any, Partial<State>> {
             this.setState({ visible: false });
           }}
           images={images}
+          rotate={images[this.state.activeIndex].rotate}
           activeIndex={this.state.activeIndex}
           container={inline ? this.container : null}
           downloadable
