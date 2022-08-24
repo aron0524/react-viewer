@@ -85,7 +85,7 @@ export default (props: ViewerProps) => {
     height: 0,
     top: 15,
     left: null,
-    rotate: props.rotate,
+    rotate: 0,
     rotate2: 0,
     imageWidth: 0,
     imageHeight: 0,
@@ -134,7 +134,6 @@ export default (props: ViewerProps) => {
           height: 0,
           scaleX: defaultScale,
           scaleY: defaultScale,
-          rotate: props.rotate,
           imageWidth: 0,
           imageHeight: 0,
           loadFailed: false,
@@ -280,15 +279,9 @@ export default (props: ViewerProps) => {
       }
       const query = qs.parse(activeImage.src.split('?')[1]);
       const process = query['x-oss-process'] ? query['x-oss-process'] : '';
-      // console.log('loadImg',process.indexOf('rotate'));
-      // console.log('loadImg activeImage.src',qs.parse(activeImage.src.split('?')[0]));
       if (process && process.indexOf('rotate') !== -1) {
         img.src = qs.parse(activeImage.src.split('?'))[0];
         activeImage.src = qs.parse(activeImage.src.split('?'))[0];
-        activeImage.rotate = props.rotate;
-        // console.log('loadImgSuccess props.rotate',props.rotate);
-        // console.log('loadImgSuccess state.rotate',state.rotate);
-        // console.log('loadImgSuccess state.rotate2',state.rotate2);
       }
       dispatch(createAction(ACTION_TYPES.update, {
         width: width,
@@ -298,7 +291,7 @@ export default (props: ViewerProps) => {
         imageWidth: imgWidth,
         imageHeight: imgHeight,
         loading: false,
-        rotate: props.rotate,
+        rotate: (Math.abs(state.rotate2 ? state.rotate2 :  props.rotate)),
         scaleX: scaleX,
         scaleY: scaleY,
         loadFailed: !success,
@@ -358,6 +351,7 @@ export default (props: ViewerProps) => {
     let activeImg2: ImageDecorator = {
       src: '',
       alt: '',
+      rotate: state.rotate2 ?? props.rotate,
       downloadUrl: '',
     };
 
@@ -370,7 +364,7 @@ export default (props: ViewerProps) => {
     if (images.length > 0 && realActiveIndex >= 0) {
       activeImg2 = images[realActiveIndex];
     }
-    activeImg2.rotate = state.rotate2 ? state.rotate2 :  0;
+    activeImg2.rotate = state.rotate2;
     return activeImg2;
   }
 
